@@ -128,5 +128,7 @@ This project currently does not have a license. You are free to explore and use 
 
 ## 📬 Contact
 
-For collaboration, feedback, or opportunities, feel free to reach out via GitHub or LinkedIn. 
+For collaboration, feedback, or opportunities, feel free to reach out via GitHub or
+- 📧 Email: mishravivekkum@gmail.com
+- 💼 LinkedIn: [Vivek Mishra](https://www.linkedin.com/in/vivek-mishra-807077263)
 Let’s connect!
