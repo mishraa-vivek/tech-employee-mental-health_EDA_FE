@@ -67,9 +67,49 @@ The dataset includes survey responses from individuals in the tech industry on t
 ## 📊 Visuals & Code Snippets
 🔥 Missing Values Heatmap
 
+   ![Missing Values Heatmap](Missing_values.png)
+   
+      # Handle missing values
+      
+      feature_with_nan = [feature for feature in df if df[feature].isnull().sum() > 0]
+      for feature in feature_with_nan:
+          print(f"{feature} has {df[feature].isnull().mean()*100:.2f}% missing values")
+
+    
 👤 Gender Distribution After Cleaning
 
+   ![Gender_Distribution](gender_before.png)
+
+      # Clean Gender Column
+        
+      def clean_gender(val):
+       val = str(val).strip().lower()
+       if val in ['male', 'm', 'man']:
+           return 'male'
+       elif val in ['female', 'f', 'woman']:
+           return 'female'
+       else:
+           return 'others'
+   
+      df['Gender'] = df['Gender'].apply(clean_gender)
+
+After Cleaning
+
+   ![Gender_Distribution](gender_cleaned.png)
+
 📈 Age Distribution After Outlier Removal
+
+   ![Age_Distribution](age_before.png)
+
+      # Outlier Handling for Age Feature
+      Q1 = df['Age'].quantile(0.25)
+      Q3 = df['Age'].quantile(0.75)
+      IQR = Q3 - Q1
+      df = df[(df['Age'] >= Q1 - 1.5 * IQR) & (df['Age'] <= Q3 + 1.5 * IQR)]
+
+After Outlier Removal
+
+   ![Age_Distribution](age_distribution.png)
 
 ---
 
